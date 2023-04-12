@@ -3,30 +3,24 @@
 # *Пример:* 123 -> 6 (1 + 2 + 3) 100 -> 1 (1 + 0 + 0) | 
 
 num = input('Введите 3-хзначное число')
-sum = 0
-text = str()
-for i in num:
-    if sum ==0:
-        i = int (i)
-        sum+=i
-        text = text + str(i)
-    else:
-        i = int (i)
-        sum+=i
-        text = text + '+' + str(i)
+sum = int(num[0]) + int(num[1]) + int(num[2])
+print (f'{num} -> {sum} ({num[0]} + {int(num[1])} + {int(num[2])})')
+print()#empty string
 
-print (f'{num} -> {sum} ({text})')
-
-
-# Задача 4: Петя, Катя и Сережа делают из бумаги журавликов. Вместе они сделали S журавликов. Сколько журавликов сделал каждый ребенок, если известно, что Петя и Сережа сделали одинаковое количество журавликов, а Катя сделала в два раза больше журавликов, чем Петя и Сережа вместе?
+# Задача 4: Петя, Катя и Сережа делают из бумаги журавликов. Вместе они сделали S журавликов.
+# Сколько журавликов сделал каждый ребенок, если известно, что Петя и Сережа сделали одинаковое
+# количество журавликов, а Катя сделала в два раза больше журавликов, чем Петя и Сережа вместе?
 
 # *Пример:* 6 -> 1  4  1 24 -> 4  16  4 60 -> 10  40  10 
 
 s = int (input ('Введите кол-во журавликов'))
-pet = s /6
-kat = pet * 4
-print(f'{s} -> {str(pet)} {str(kat)} {str(pet)}')
-
+if s%6 == 0:
+    pet = s /6
+    kat= pet * 4
+    print(f'{s} -> {str(pet)} {str(kat)} {str(pet)}')
+else:
+    print('zhuravliki nepolnye')
+print() #empty string
 
 
 # Задача 6: Вы пользуетесь общественным транспортом? Вероятно, вы расплачивались за проезд
@@ -37,29 +31,27 @@ print(f'{s} -> {str(pet)} {str(kat)} {str(pet)}')
 # *Пример:* 385916 -> yes 123456 -> no 
 
 ticket = input ("Введите 6 цифр билета")
-first = ticket [:3]
-print (first)
-last = ticket [3:]
-print(last)
-sum_first = 0
-sum_last = 0
+sum_first = int(ticket[0]) + int(ticket[1]) + int(ticket [2])
+sum_last = int(ticket[3]) + int(ticket[4]) + int(ticket [5])
 
-for i in first:
-    i = int(i)
-    sum_first+=i
-
-for i in last:
-    i = int(i)
-    sum_last+=i
-        
 if sum_first==sum_last:
     print(f'{ticket} -> yes')
 else:
     print(f'{ticket} -> no')
     
-    
+print() #empty string
+
 # Задача 8: Требуется определить, можно ли от шоколадки размером n × m долек отломить k долек, если разрешается сделать один разлом по прямой между дольками (то есть разломить шоколадку на два прямоугольника).
 
 # *Пример:* 3 2 4 -> yes 3 2 1 -> no
 
-
+print('insert -> n')
+n = int(input())
+print('insert -> m')
+m = int(input())
+print('insert -> k')
+k = int(input())
+if k < n * m and ((k % n == 0) or (k % m == 0)):
+    print(f'{n} {m} {k} -> yes')
+else:
+    print(f'{n} {m} {k} -> no')
