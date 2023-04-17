@@ -35,31 +35,33 @@
 #     6
 #     -> 5
 
-import random
-n = int(input("введите кол-во элементов списка: "))
-range = [random.randint(1, n) for i in range(n)]
-print(*range)
-search = int(input("Что ищем? "))
-dispers = []
-for i in range:
-    dispers.append(search - i)
-print(dispers)
-num = min(dispers)
-if num == 0:
-    for i in dispers:
-        dispers.remove(0)
-        if dispers.remove(0) == ValueError:
-            num = min(dispers)
-            search_num = search-num
-            print(f'-> {search-num}')
-
-print(f'-> {search-num}')
+# import random
+# n = int(input("введите кол-во элементов списка: "))
+# range = [random.randint(1, n) for i in range(n)]
+# print(*range)
+# search = int(input("Что ищем? "))
+# dispers = []
+# for i in range:
+#     dispers.append(search - i)
+# print(dispers)
+# for k in dispers:
+#     if k <= 0:
+#         dispers.remove(k)
+#
+# num = search - min(dispers)
+# print(f'-> {num}')
 
 
 # *Задача 20: * В настольной игре Скрабл (Scrabble) каждая буква имеет определенную ценность.
 # В случае с английским алфавитом очки распределяются так:
-# A, E, I, O, U, L, N, S, T, R – 1 очко; D, G – 2 очка; B, C, M, P – 3 очка; F, H, V, W, Y – 4 очка;
-# K – 5 очков; J, X – 8 очков; Q, Z – 10 очков. А русские буквы оцениваются так: А, В, Е, И, Н, О, Р, С, Т – 1 очко;
+# A, E, I, O, U, L, N, S, T, R – 1 очко;
+# D, G – 2 очка;
+# B, C, M, P – 3 очка;
+# F, H, V, W, Y – 4 очка;
+# K – 5 очков;
+# J, X – 8 очков;
+# Q, Z – 10 очков.
+# А русские буквы оцениваются так: А, В, Е, И, Н, О, Р, С, Т – 1 очко;
 # Д, К, Л, М, П, У – 2 очка; Б, Г, Ё, Ь, Я – 3 очка; Й, Ы – 4 очка; Ж, З, Х, Ц, Ч – 5 очков;
 # Ш, Э, Ю – 8 очков; Ф, Щ, Ъ – 10 очков.
 # Напишите программу, которая вычисляет стоимость введенного пользователем слова. Будем считать,
@@ -69,4 +71,18 @@ print(f'-> {search-num}')
 #
 # ноутбук
 #     12
+list_letters = {1:"AEIOULNSTRАВЕИНОРСТ",
+                2:"DGДКЛМПУ",
+                3:"BCMPБГЁЬЯ",
+                4:"FHVWYЙЫ",
+                5:"KЖЗХЦЧ",
+                8:"JXШЭЮ",
+                10:"QZФЩЪ"}
 
+word = input("Введите слово: ").upper()
+sum = 0
+for i in word:
+    for k, v in list_letters.items():
+        if i in v:
+            sum += k
+print(f"Стоимость слова: {sum}")
