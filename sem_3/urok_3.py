@@ -11,18 +11,18 @@
 #     3
 #     -> 1
 
-# import random
-# n = int(input("введите кол-во элементов списка: "))
-# arr = [random.randint(1, n) for i in range(n)]
-# print(*arr)
-# search = int(input("Что ищем? "))
-# count = 0
-# for k in arr:
-#     if k == search:
-#         count+=1
-#
-# print(f'-> {count}')
-#
+import random
+n = int(input("введите кол-во элементов списка: "))
+arr = [random.randint(1, n) for i in range(n)]
+print(*arr)
+search = int(input("Что ищем? "))
+count = 0
+for k in arr:
+    if k == search:
+        count+=1
+
+print(f'-> {count}')
+
 
 # Задача 18: Требуется найти в массиве A[1..N] самый близкий по величине элемент к заданному числу X.
 # Пользователь в первой строке вводит натуральное число N – количество элементов в массиве. В последующих
@@ -35,21 +35,21 @@
 #     6
 #     -> 5
 
-# import random
-# n = int(input("введите кол-во элементов списка: "))
-# range = [random.randint(1, n) for i in range(n)]
-# print(*range)
-# search = int(input("Что ищем? "))
-# dispers = []
-# for i in range:
-#     dispers.append(search - i)
-# print(dispers)
-# for k in dispers:
-#     if k <= 0:
-#         dispers.remove(k)
-#
-# num = search - min(dispers)
-# print(f'-> {num}')
+import random
+n = int(input("введите кол-во элементов списка: "))
+range = [random.randint(1, n) for i in range(n)]
+print(*range)
+search = int(input("Что ищем? "))
+dispers = []
+for i in range:
+    dispers.append(search - i)
+print(dispers)
+for k in dispers:
+    if k <= 0:
+        dispers.remove(k)
+
+num = search - min(dispers)
+print(f'-> {num}')
 
 
 # *Задача 20: * В настольной игре Скрабл (Scrabble) каждая буква имеет определенную ценность.
