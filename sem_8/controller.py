@@ -7,20 +7,20 @@ actions = {'1': 'список',
         '3': 'поиск',
         '4': 'изменение',
         '5': 'удаление',
-        'q': 'выход'}
+        'exit': 'выход'}
 
 
-while actions != 'q':
-    print('Какое действие хотите совершить?',
+while actions != 'exit':
+    print('Выберите действие',
           *[f'{i} - {actions[i]}' for i in actions])
     action = input()
     while action not in actions:
-        print('Какое действие хотите совершить?',
+        print('Выберите действие',
               *[f'{i} - {actions[i]}' for i in actions])
         action = input()
         if action not in actions:
             print('Введены неверные данные')
-    if action != 'q':
+    if action != 'exit':
         if action == '1':
             view.print_records(model.path)
         elif action == '2':

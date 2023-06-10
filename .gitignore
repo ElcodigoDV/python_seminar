@@ -1,5 +1,7 @@
 .vscode
 test.py
+__pycache__
+.pyc
 .idea
 sem_1
 sem_2
